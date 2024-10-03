@@ -1,0 +1,14 @@
+@model List<Booking>
+<div class="text-center">
+
+<h1>Booking Search Page</h1>
+<p>Search for bookings by name or room!</p>
+</div>
+
+<div class="form-group">
+<input class="form-control" type="text">
+</div>
+
+<partial name="_BookingSearch" model=@Model></partial>
+
+

@@ -17,6 +17,7 @@ public class Client : IClient, IDisposable
         public async Task<Booking> GetBooking(string Id){
             var request = new RestRequest("bookings/" + Id, Method.Get);
             //request.AddParameter("id", Id);
+            //git commit test.
             var response = await _restClient.GetAsync<RestResponse>(request);
 
             if(response != null){

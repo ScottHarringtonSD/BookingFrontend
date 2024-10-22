@@ -5,15 +5,16 @@ using RestSharp;
 using Microsoft.Extensions.WebEncoders.Testing;
 
 
+
 namespace BookingFrontEnd.Controllers;
 
 public class BookingController : Controller
 {
-    private readonly IClient _client;
+    private readonly IBookingClient _bookingClient;
 
-    public BookingController(IClient client, ILogger<HomeController> logger)
+    public BookingController(IBookingClient bookingClient, ILogger<HomeController> logger)
     {
-        _client = client;
+        _bookingClient = bookingClient;
         _logger = logger;
     }
 
@@ -21,20 +22,46 @@ public class BookingController : Controller
 
 
 
-    //Remeber its controller/action/parameter as the strucuture.    
+    //Remeber its controller/action/parameter as the strucuture.  
+    [HttpGet]  
     public IActionResult BookingDetail(string id){
 
-        Booking returnBooking = _client.GetBooking(id).Result;
+        Booking returnBooking = _bookingClient.GetBooking(id);
 
         return View(returnBooking);
 
     }
 
+    [HttpGet]
+    public IActionResult BookingAdd(){
+        return View(new BookingAddModel());
+    }
 
+    /// <summary>
+    /// Method for adding a booking.
+    /// </summary>
+    /// <param name="booking">The booking being added.</param>
+    /// <returns>A success message.</returns>
+    [HttpPost]
+    public IActionResult BookingAdd(BookingAddModel booking){
+        string returnString = _bookingClient.AddBooking(new BookingBusinessModel(booking));
+
+        return RedirectToAction("BookingDetail", new { id = returnString});
+    }
+
+    /// <summary>
+    /// A method for searching for stuff
+    /// </summary>
+    /// <returns></returns>
     public IActionResult BookingSearch(){
         return View();
     }
 
+    /// <summary>
+    /// gives the search results.
+    /// </summary>
+    /// <param name="search">The search query.</param>
+    /// <returns>A view with the list of bookings.</returns>
     public IActionResult BookingSearchResults(string search){
 
         DateOnly testDate = DateOnly.Parse("12-12-2000");

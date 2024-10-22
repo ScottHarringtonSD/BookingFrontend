@@ -1,0 +1,31 @@
+@model BookingAddModel
+
+
+<h1>Add Booking</h1>
+
+<form method="post">
+
+<div class="form-group">
+<label asp-for="Name"></label>
+<input asp-for="Name" type="text" placeholder="Your Name" class="form-control">
+</div>
+
+<div>
+<label asp-for="Room"></label>
+<select asp-for="Room" type="text">
+@{
+    foreach(string room in Model.RoomsList){
+        <option value="@room">@room Room</option>
+    }
+}
+</select>
+</div>
+
+<div>
+<label asp-for="Date"></label>
+<input asp-for="Date">
+</div>
+
+<button class="btn" asp-controller="Booking" asp-action="BookingAdd">Submit Booking</button>
+
+</form>

@@ -1,16 +1,16 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net8.0": {
       "RestSharp/112.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/RestSharp.dll": {
+          "lib/net8.0/RestSharp.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/RestSharp.dll": {
+          "lib/net8.0/RestSharp.dll": {
             "related": ".xml"
           }
         }
@@ -45,34 +45,34 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net8.0": [
       "RestSharp >= 112.0.0"
     ]
   },
   "packageFolders": {
-    "/Users/scottharrington/.nuget/packages/": {}
+    "C:\\Users\\scott\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/scottharrington/Projects/Booking MVC/BookingFrontEnd/BookingFrontEnd.csproj",
+      "projectUniqueName": "C:\\Users\\scott\\Projects\\BookingFrontend\\BookingFrontEnd\\BookingFrontEnd.csproj",
       "projectName": "BookingFrontEnd",
-      "projectPath": "/Users/scottharrington/Projects/Booking MVC/BookingFrontEnd/BookingFrontEnd.csproj",
-      "packagesPath": "/Users/scottharrington/.nuget/packages/",
-      "outputPath": "/Users/scottharrington/Projects/Booking MVC/BookingFrontEnd/obj/",
+      "projectPath": "C:\\Users\\scott\\Projects\\BookingFrontend\\BookingFrontEnd\\BookingFrontEnd.csproj",
+      "packagesPath": "C:\\Users\\scott\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\scott\\Projects\\BookingFrontend\\BookingFrontEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/scottharrington/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\scott\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -80,11 +80,16 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "RestSharp": {
             "target": "Package",
@@ -110,7 +115,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

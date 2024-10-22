@@ -31,3 +31,37 @@
 /Users/scottharrington/Projects/Booking MVC/BookingFrontEnd/obj/Debug/net7.0/ref/BookingFrontEnd.dll
 /Users/scottharrington/Projects/Booking MVC/BookingFrontEnd/bin/Debug/net7.0/RestSharp.dll
 /Users/scottharrington/Projects/Booking MVC/BookingFrontEnd/obj/Debug/net7.0/BookingFrontEnd.csproj.CopyComplete
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\appsettings.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\BookingFrontEnd.staticwebassets.runtime.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\BookingFrontEnd.exe
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\BookingFrontEnd.deps.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\BookingFrontEnd.runtimeconfig.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\BookingFrontEnd.dll
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\BookingFrontEnd.pdb
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Debug\net7.0\RestSharp.dll
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.csproj.AssemblyReference.cache
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.AssemblyInfoInputs.cache
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.AssemblyInfo.cs
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.RazorAssemblyInfo.cache
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.RazorAssemblyInfo.cs
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.sourcelink.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\staticwebassets\msbuild.BookingFrontEnd.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\staticwebassets\msbuild.build.BookingFrontEnd.props
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.BookingFrontEnd.props
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.BookingFrontEnd.props
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\scopedcss\bundle\BookingFrontEnd.styles.css
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\scopedcss\projectbundle\BookingFrontEnd.bundle.scp.css
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingF.9DFCA5DD.Up2Date
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.dll
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\refint\BookingFrontEnd.dll
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.pdb
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\BookingFrontEnd.genruntimeconfig.cache
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\obj\Debug\net7.0\ref\BookingFrontEnd.dll

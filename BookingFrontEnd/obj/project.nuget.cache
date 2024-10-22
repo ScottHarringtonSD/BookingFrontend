@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7GnyA1btzSxaY0T0cVqLcCgLgchabYJJ+2FmBjAPG7cnC30aK+0mfqRWkDaj0p6HqkGcoUjNoOO/ggXybpduPQ==",
+  "dgSpecHash": "jT32EEOQfmw=",
   "success": true,
-  "projectFilePath": "/Users/scottharrington/Projects/Booking MVC/BookingFrontEnd/BookingFrontEnd.csproj",
+  "projectFilePath": "c:\\Users\\scott\\Projects\\BookingFrontend\\BookingFrontEnd\\BookingFrontEnd.csproj",
   "expectedPackageFiles": [
-    "/Users/scottharrington/.nuget/packages/restsharp/112.0.0/restsharp.112.0.0.nupkg.sha512"
+    "C:\\Users\\scott\\.nuget\\packages\\restsharp\\112.0.0\\restsharp.112.0.0.nupkg.sha512"
   ],
   "logs": []
 }

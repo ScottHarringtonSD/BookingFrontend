@@ -24,9 +24,11 @@ public class Client : IClient, IDisposable
 
             if (restResponse.StatusCode == System.Net.HttpStatusCode.OK || restResponse.StatusCode == System.Net.HttpStatusCode.Created)
             {
-                Console.WriteLine(restResponse.Content);
                 return restResponse.Data!;
 
+            }
+            else if (restResponse.StatusCode == System.Net.HttpStatusCode.Conflict){
+                throw new ConflictingException("This data conflicts with that in the database");
             }
 
             // else if (restResponse.StatusCode == System.Net.HttpStatusCode.NotFound)

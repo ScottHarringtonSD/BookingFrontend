@@ -26,7 +26,7 @@ public class BookingAddModel{
     public BookingAddModel(){
         Name = string.Empty;
         Room = string.Empty;
-        Date = new DateOnly();
+        Date = DateOnly.FromDateTime(DateTime.Now);
         RoomsList = new List<string>();
         foreach (string roomOption in Enum.GetNames(typeof(RoomOptions)))
         {   

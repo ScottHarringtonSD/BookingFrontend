@@ -44,17 +44,37 @@ public class BookingController : Controller
     /// <returns>A success message.</returns>
     [HttpPost]
     public IActionResult BookingAdd(BookingAddModel booking){
+        try{
+
         string returnString = _bookingClient.AddBooking(new BookingBusinessModel(booking));
 
         return RedirectToAction("BookingDetail", new { id = returnString});
+        }
+        catch(ConflictingException){
+            TempData["Message"] = "Error: This room is already booked on this day. Please try a different room or a different day!";
+            return View(booking);
+        }
+    }
+
+    public IActionResult BookingAvailability(){
+
+
+
+        List<Booking> bookingList = _bookingClient.GetAllBookings();
+
+        BookingAvailabilityModel bookingAvailability = new BookingAvailabilityModel(10,2024,bookingList);
+        
+
+        return View(bookingAvailability);
     }
 
     /// <summary>
     /// A method for searching for stuff
     /// </summary>
     /// <returns></returns>
+    [HttpGet]
     public IActionResult BookingSearch(){
-        return View();
+        return View(new List<Booking>());
     }
 
     /// <summary>
@@ -62,6 +82,7 @@ public class BookingController : Controller
     /// </summary>
     /// <param name="search">The search query.</param>
     /// <returns>A view with the list of bookings.</returns>
+    [HttpGet]
     public IActionResult BookingSearchResults(string search){
 
         DateOnly testDate = DateOnly.Parse("12-12-2000");
@@ -79,4 +100,7 @@ public class BookingController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+
+    
 }

@@ -1,5 +1,6 @@
 using System.Text.Json.Nodes;
 using BookingFrontEnd.Models;
+using Microsoft.Extensions.FileSystemGlobbing.Internal.PathSegments;
 using RestSharp;
    
 
@@ -10,6 +11,27 @@ public class BookingClient : IBookingClient, IDisposable
         public BookingClient(IClient client)
         {
             _client = client;
+        }
+
+        /// <summary>
+        /// Gets a list of all the bookings
+        /// </summary>
+        /// <returns>The full list of bookings</returns>
+        public List<Booking> GetAllBookings(){
+
+            var request = new RestRequest("Bookings", Method.Get);
+
+            var response = _client!.ExecuteRequest<List<BookingBusinessModel>>(request);
+
+            List<Booking> returnList = new List<Booking>();
+
+            foreach(var bookingBusinessModel in response){
+                Booking returnBooking = new Booking(bookingBusinessModel);
+                returnList.Add(returnBooking);
+            }
+
+            return returnList;
+            
         }
 
         /// <summary>

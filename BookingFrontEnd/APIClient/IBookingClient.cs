@@ -6,5 +6,7 @@ public interface IBookingClient{
 
     public string AddBooking(BookingBusinessModel booking);
 
+    public List<Booking> GetAllBookings();
+
     public void Dispose();
 }

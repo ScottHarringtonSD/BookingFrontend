@@ -2,30 +2,38 @@
 
 
 <h1>Add Booking</h1>
-
 <form method="post">
-
-<div class="form-group">
-<label asp-for="Name"></label>
-<input asp-for="Name" type="text" placeholder="Your Name" class="form-control">
-</div>
-
-<div>
-<label asp-for="Room"></label>
-<select asp-for="Room" type="text">
-@{
-    foreach(string room in Model.RoomsList){
-        <option value="@room">@room Room</option>
-    }
-}
-</select>
-</div>
-
-<div>
-<label asp-for="Date"></label>
-<input asp-for="Date">
-</div>
-
-<button class="btn" asp-controller="Booking" asp-action="BookingAdd">Submit Booking</button>
-
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" type="text" placeholder="Your Name" class="form-control">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Room" class="form-label"></label>
+            <select asp-for="Room" type="text" class="form-select">
+            @{
+                foreach(string room in Model.RoomsList){
+                    <option value="@room">@room Room</option>
+                }
+            }
+            </select>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Date" class="form-label"></label>
+        <input asp-for="Date" class="form-control">
+    </div>
+    <div>
+        <button class="btn btn-primary" asp-controller="Booking" asp-action="BookingAdd">Submit Booking</button>
+    </div>
 </form>
+
+@if(TempData["Message"] != null){
+
+<div class="row pt-3">
+    <div class="alert alert-danger pt-3" role="alert">
+    @TempData["Message"]
+    </div>
+</div>
+}
+

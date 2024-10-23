@@ -15,8 +15,21 @@ html {
 html {
   position: relative;
   min-height: 100%;
+
 }
 
 body {
   margin-bottom: 60px;
+}
+
+.square {
+  background: #000;
+  min-height: 5vw;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.calendar-margin{
+  margin-right: 0px;
+  margin-left: 0px;
 }

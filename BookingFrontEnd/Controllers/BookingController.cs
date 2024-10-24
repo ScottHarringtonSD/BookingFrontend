@@ -56,13 +56,20 @@ public class BookingController : Controller
         }
     }
 
-    public IActionResult BookingAvailability(){
+    /// <summary>
+    /// Gets the availability.
+    /// </summary>
+    /// <param name="year">The year</param>
+    /// <param name="month">The month</param>
+    /// <returns>The availability client.</returns>
+    [HttpGet]
+    public IActionResult BookingAvailability(int year, int month){
 
 
 
-        List<Booking> bookingList = _bookingClient.GetAllBookings();
+        List<Booking> bookingList = _bookingClient.GetMonthlyBookings(year, month);
 
-        BookingAvailabilityModel bookingAvailability = new BookingAvailabilityModel(10,2024,bookingList);
+        BookingAvailabilityModel bookingAvailability = new BookingAvailabilityModel(month,year,bookingList);
         
 
         return View(bookingAvailability);

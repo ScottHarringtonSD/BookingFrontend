@@ -54,6 +54,11 @@ public class BookingClient : IBookingClient, IDisposable
             
         }
 
+        /// <summary>
+        /// Adds a booking to the system.
+        /// </summary>
+        /// <param name="booking">The booking being added.</param>
+        /// <returns>The Id of the booking added.</returns> 
         public string AddBooking(BookingBusinessModel booking){
 
             var request = new RestRequest("Bookings", Method.Post);
@@ -65,7 +70,21 @@ public class BookingClient : IBookingClient, IDisposable
         }
 
  
+        public List<Booking> GetMonthlyBookings(int year, int month)   
+        {
+            var request = new RestRequest("Bookings/monthly/" + year + "/" + month, Method.Get);
 
+            var response = _client!.ExecuteRequest<List<BookingBusinessModel>>(request);
+
+            List<Booking> returnList = new List<Booking>();
+
+            foreach(var bookingBusinessModel in response){
+                Booking returnBooking = new Booking(bookingBusinessModel);
+                returnList.Add(returnBooking);
+            }
+
+            return returnList;
+        }
 
 
         public void Dispose() {

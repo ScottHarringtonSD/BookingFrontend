@@ -1,5 +1,18 @@
 @model BookingAvailabilityModel
 
+@{
+    DateOnly currentMonth = new DateOnly(Model.Year, Model.Month, 1);
+    DateOnly nextMonthDate = currentMonth.AddMonths(1);
+    DateOnly previousMonthDate = currentMonth.AddMonths(-1);
+
+
+    int previousMonth = previousMonthDate.Month;
+    int previousYear = previousMonthDate.Year;
+
+    int nextMonth = nextMonthDate.Month;
+    int nextYear = nextMonthDate.Year;
+}
+
 
 <div class="text-center">
     <h2>Available Dates for: </h2>
@@ -7,9 +20,9 @@
 <div class="text-center">
     
     <h3>
-        <Button class="btn btn-primary">&#8592;</Button>
+        <a class="btn btn-primary" asp-controller="Booking" asp-action="BookingAvailability" asp-route-year=@previousYear asp-route-month=@previousMonth>&#8592;</a>
     @Model.Month/@Model.Year
-     <Button class="btn btn-primary">&#8594;</Button>
+     <a class="btn btn-primary" asp-controller="Booking" asp-action="BookingAvailability" asp-route-year=@nextYear asp-route-month=@nextMonth>&#8594;</a>
     </h3>
    
 </div>

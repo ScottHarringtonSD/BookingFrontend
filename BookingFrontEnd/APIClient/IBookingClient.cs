@@ -8,5 +8,7 @@ public interface IBookingClient{
 
     public List<Booking> GetAllBookings();
 
+    public List<Booking> GetMonthlyBookings(int year, int month);
+
     public void Dispose();
 }

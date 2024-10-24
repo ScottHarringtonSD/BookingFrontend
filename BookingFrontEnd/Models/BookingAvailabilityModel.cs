@@ -34,8 +34,8 @@ public class BookingAvailabilityModel{
                 }
             }
 
-            int currentMonth = DateTime.Now.Month;
-            int currentYear = DateTime.Now.Year;
+            int currentMonth = Month;
+            int currentYear = Year;
 
             foreach(Booking booking in bookings)
             {

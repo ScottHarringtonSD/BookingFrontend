@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+
+    DateTime today = DateTime.Now;
+    int currentYear = today.Year;
+    int currentMonth = today.Month;
+
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -33,7 +42,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingAdd">Add Bookings</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingAvailability">Availability</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingAvailability" asp-route-year=@currentYear asp-route-month=@currentMonth>Availability</a>
                         </li>
                     </ul>
                 </div>

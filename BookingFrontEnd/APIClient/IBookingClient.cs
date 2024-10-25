@@ -10,5 +10,7 @@ public interface IBookingClient{
 
     public List<Booking> GetMonthlyBookings(int year, int month);
 
+    public List<Booking> SearchBookings(string? name, DateTime? date);
+
     public void Dispose();
 }

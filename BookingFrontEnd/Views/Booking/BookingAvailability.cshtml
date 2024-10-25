@@ -11,6 +11,16 @@
 
     int nextMonth = nextMonthDate.Month;
     int nextYear = nextMonthDate.Year;
+
+
+    int monthLength = 31;
+
+    if (new[] {9, 4, 6, 11}.Contains(Model.Month)){
+        monthLength = 30;
+    }
+    else if(Model.Month == 2){
+        monthLength = 28;
+    }
 }
 
 
@@ -43,7 +53,7 @@
     @{ for(int j = 0; j < 7; j++){
     <div class="col">
         @{ 
-                for(int i = j; i < 31; i = i + 7){
+                for(int i = j; i < monthLength; i = i + 7){
                     if(Model.Availabilities[i,0] + Model.Availabilities[i,1] == 0){
                         <div class="row calendar-margin">
                             <div class="bg-success square border border-dark"  data-bs-toggle="tooltip" data-bs-placement="top" title="Both Guest and Front Room are available!"> @(i+1)</div>

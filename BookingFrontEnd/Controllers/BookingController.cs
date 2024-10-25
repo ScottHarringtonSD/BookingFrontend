@@ -22,7 +22,11 @@ public class BookingController : Controller
 
 
 
-    //Remeber its controller/action/parameter as the strucuture.  
+    /// <summary>
+    /// Gets the details of the boooking
+    /// </summary>
+    /// <param name="id">The id of the booking</param>
+    /// <returns>The booking detail page.</returns>
     [HttpGet]  
     public IActionResult BookingDetail(string id){
 
@@ -80,8 +84,20 @@ public class BookingController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    public IActionResult BookingSearch(){
-        return View(new List<Booking>());
+    public IActionResult BookingSearch(BookingSearchModel search){
+
+        if(search.Name == null && search.Date == null){
+            return View(new BookingSearchModel());
+        }
+        
+
+        List<Booking> bookingList = _bookingClient.SearchBookings(search.Name, search.Date);
+
+        BookingSearchModel bookingSearch = new BookingSearchModel(search.Name, search.Date, bookingList);
+
+        return View(bookingSearch);
+
+        
     }
 
     /// <summary>

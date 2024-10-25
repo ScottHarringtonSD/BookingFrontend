@@ -87,6 +87,36 @@ public class BookingClient : IBookingClient, IDisposable
         }
 
 
+        public List<Booking> SearchBookings(string? name, DateTime? date){
+
+
+            string dateRequest = string.Empty;
+            if(date != null){
+                DateTime newDate = (DateTime)date;
+                dateRequest = newDate.Year.ToString() + "-" + newDate.Month.ToString("00") + "-" + newDate.Day.ToString("00");
+            }
+
+
+
+            var request = new RestRequest("Bookings", Method.Get);
+
+            request.AddQueryParameter("searchName", name);
+
+            request.AddQueryParameter("searchDate", dateRequest);
+
+            var response = _client!.ExecuteRequest<List<BookingBusinessModel>>(request);
+
+            List<Booking> returnList = new List<Booking>();
+
+            foreach(var bookingBusinessModel in response){
+                Booking returnBooking = new Booking(bookingBusinessModel);
+                returnList.Add(returnBooking);
+            }
+
+            return returnList;
+        }
+
+    
         public void Dispose() {
         _client?.Dispose();
         GC.SuppressFinalize(this);

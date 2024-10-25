@@ -1,7 +1,62 @@
 @model Booking;
-
+<div class="text-center">
 <h1>Booking Details</h1>
+</div>
 
-<p>Client: @Model.Name</p>
-<p>Room: @Model.Room Room</p>
-<p>Date: @Model.Date</p>
+<div class="row gy-5 mt-0">
+
+@{if(Model.Room == "Guest"){
+        <div class="col-sm-6">
+            <div>
+                <img class="responsive rounded mx-auto d-block" src="https://utfs.io/f/4ULawMmyjNB8jQLxmNBpqRCH8deV91OAGZB4NULzT7fhIuPv"/>
+            </div>
+        </div>
+}
+else{
+    <div class="col-sm-6">
+        <div>
+
+                <img class="responsive rounded mx-auto d-block" src="https://utfs.io/f/4ULawMmyjNB8aNciG5MI58s6dKj1NkBwvyPTugD7eiZ2Al4J"/>
+        </div>
+   
+    </div>
+
+
+}
+
+
+}
+    
+        <div class="col-sm-3">
+
+<h4>Client: @Model.Name</h4>
+<h4>Room: @Model.Room Room</h4>
+<h4>Date: @Model.Date</h4>
+
+
+
+@{if(Model.Room == "Guest"){
+        <div>
+              <span>Overlooking the snowy alps of oxford, the guest room promises breathtaking views of our
+                wonderful valley, providing a true winter wonderland experience!
+              </span>  
+            </div>
+}
+else{
+    <div>
+              <span>The front room opens directly onto the beachfront of our property,
+                and the wonderful sounds of splashing waves and bin lorries will provide
+                a soothing atmosphere to your stay!
+              </span>  
+        </div>
+
+
+}
+}
+
+
+
+
+                 
+</div>
+</div>

@@ -1,14 +1,52 @@
-@model List<Booking>
+@model BookingSearchModel
 <div class="text-center">
 
 <h1>Booking Search Page</h1>
-<p>Search for bookings by name or room!</p>
+<p>Search for bookings by client or date!</p>
 </div>
 
-<div class="form-group">
-<input class="form-control" type="text">
+<form class="form-group" method="get">
+    <div class="align-items-center justify-content-center d-flex">
+    <div class="row ">
+    <div class="col-sm-5">
+
+        <input asp-for="Name" class="form-control" type="text" placeholder="Input the name of the client"/>
+    </div>
+    <div class="col-sm-5">
+        <input asp-for="Date" class="form-control" type="date">
+    </div>
+    <div class="col-sm-2 ">
+        <button class="btn btn-primary btn-block" type="submit" asp-controller="Booking" asp-action="BookingSearch">Search</button>
+    </div>
+ 
+    </div>
+    </div>
+        </form>
+    <div class="row pt-3">
+        <div>
+<table class="table table-striped table-secondary">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Room</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+        @foreach(Booking booking in Model.BookingList){
+    <tr>
+            <td>
+                <a asp-controller="Booking" asp-action="BookingDetail" asp-route-id=@booking.Id>@booking.Name</a>
+                </td>
+            <td>@booking.Room</td>
+            <td>@booking.Date</td>
+      </tr>
+        }
+    
+  </tbody>
+</table>
+
+    </div>
 </div>
-
-<partial name="_BookingSearch" model=@Model></partial>
-
 

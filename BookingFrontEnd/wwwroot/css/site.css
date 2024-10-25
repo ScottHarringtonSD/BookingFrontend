@@ -33,3 +33,16 @@ body {
   margin-right: 0px;
   margin-left: 0px;
 }
+
+
+.responsive {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
+.responsive-home {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}

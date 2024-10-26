@@ -100,22 +100,21 @@ public class BookingController : Controller
         
     }
 
-    /// <summary>
-    /// gives the search results.
-    /// </summary>
-    /// <param name="search">The search query.</param>
-    /// <returns>A view with the list of bookings.</returns>
-    [HttpGet]
-    public IActionResult BookingSearchResults(string search){
+    [HttpDelete]
+    public IActionResult BookingDelete(string id){
+        bool result = _bookingClient.DeleteBooking(id);
 
-        DateOnly testDate = DateOnly.Parse("12-12-2000");
-        Booking example = new Booking("id","test", "testt", testDate);
-
-        List<Booking> bookingList = new List<Booking>();
-
-        bookingList.Add(example);
-        return PartialView("_BookingSearch", bookingList);
+        if (result){
+            return RedirectToAction("BookingSearch", new { search = new BookingSearchModel()});
+        }
+        else{
+            TempData["Message"] = "This deletion failed. Not sure why. Sorry";
+            return RedirectToAction("BookingDetail", new { id = id}); 
+        }
     }
+
+
+
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

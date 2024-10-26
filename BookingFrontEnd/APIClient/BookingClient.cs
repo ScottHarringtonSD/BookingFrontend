@@ -69,7 +69,12 @@ public class BookingClient : IBookingClient, IDisposable
             return response.Id;
         }
 
- 
+        /// <summary>
+        /// Gets the bookings for a given month
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <returns>Returns a list of bookings in that month.</returns>
         public List<Booking> GetMonthlyBookings(int year, int month)   
         {
             var request = new RestRequest("Bookings/monthly/" + year + "/" + month, Method.Get);
@@ -86,7 +91,12 @@ public class BookingClient : IBookingClient, IDisposable
             return returnList;
         }
 
-
+        /// <summary>
+        /// Searches for bookings given name of client and date.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="date"></param>
+        /// <returns>A list of bookings that match the search.</returns>
         public List<Booking> SearchBookings(string? name, DateTime? date){
 
 
@@ -114,6 +124,33 @@ public class BookingClient : IBookingClient, IDisposable
             }
 
             return returnList;
+        }
+
+        /// <summary>
+        /// Deletes a booking.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A boolean to confirm if the booking has been deleted.</returns>
+        public bool DeleteBooking(string id){
+
+            try{
+
+
+                var request = new RestRequest("Bookings", Method.Delete);
+
+                request.AddBody(id);
+
+                var response = _client!.ExecuteRequest<string>(request);
+
+
+                return true;
+
+            }
+            catch{
+                return false;
+            }
+
+
         }
 
     

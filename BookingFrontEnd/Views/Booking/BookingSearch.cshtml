@@ -1,5 +1,24 @@
 @model BookingSearchModel
+
+
+@{
+    bool searchStatus = (Model.Name == null && Model.Date == null);
+    bool noResults = ((Model.Name != null || Model.Date != null) && Model.BookingList.Count == 0);
+
+}
+
 <div class="text-center">
+
+@if(TempData["Message"] != null){
+
+<div class="row pt-3">
+    <div class="alert alert-danger pt-3" role="alert">
+    @TempData["Message"]
+    </div>
+</div>
+}
+
+
 
 <h1>Booking Search Page</h1>
 <p>Search for bookings by client or date!</p>
@@ -39,7 +58,7 @@
             <td>
                 <a asp-controller="Booking" asp-action="BookingDetail" asp-route-id=@booking.Id>@booking.Name</a>
                 </td>
-            <td>@booking.Room</td>
+            <td>@booking.Room Room</td>
             <td>@booking.Date</td>
       </tr>
         }
@@ -49,4 +68,20 @@
 
     </div>
 </div>
+
+
+    @if(searchStatus){
+        <div class="text-center">
+        <span class="text-center">Get Searching!</span>
+        </div>
+    }
+    
+    else if(noResults){
+        <div class="text-center">
+
+        <span >Sorry, there are no bookings that match your search.</span>
+        </div>
+    }
+
+
 

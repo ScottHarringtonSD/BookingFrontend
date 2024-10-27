@@ -100,11 +100,18 @@ public class BookingController : Controller
         
     }
 
-    [HttpDelete]
+
+    /// <summary>
+    /// A method for deleting bookings.
+    /// </summary>
+    /// <param name="id">The id of the booking being deleted.</param>
+    /// <returns>The search page.</returns>
+    [HttpPost]
     public IActionResult BookingDelete(string id){
         bool result = _bookingClient.DeleteBooking(id);
 
         if (result){
+            TempData["Message"] = "Booking Deletion Successful!";
             return RedirectToAction("BookingSearch", new { search = new BookingSearchModel()});
         }
         else{

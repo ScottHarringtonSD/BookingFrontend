@@ -135,12 +135,12 @@ public class BookingClient : IBookingClient, IDisposable
 
             try{
 
+                var request = new RestRequest(
 
-                var request = new RestRequest("Bookings", Method.Delete);
+                "Bookings/" + id, Method.Delete);
 
-                request.AddBody(id);
 
-                var response = _client!.ExecuteRequest<string>(request);
+                var response = _client!.ExecuteRequest<JsonObject>(request);
 
 
                 return true;

@@ -1,0 +1,8 @@
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Release\net8.0\publish\BookingFrontEnd.exe
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Release\net8.0\publish\appsettings.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Release\net8.0\publish\BookingFrontEnd.dll
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Release\net8.0\publish\BookingFrontEnd.deps.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Release\net8.0\publish\BookingFrontEnd.runtimeconfig.json
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Release\net8.0\publish\BookingFrontEnd.pdb
+C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd\bin\Release\net8.0\publish\RestSharp.dll

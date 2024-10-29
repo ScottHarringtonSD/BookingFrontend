@@ -10,7 +10,8 @@ public class Client : IClient, IDisposable
 
         {
 
-            RestClient = new RestClient("http://localhost:3000/");
+            //RestClient = new RestClient("http://localhost:3000/");
+            RestClient = new RestClient("https://bookingapi-1ymq.onrender.com/");
 
         }
 

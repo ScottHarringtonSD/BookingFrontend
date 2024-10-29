@@ -18,16 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\scott\Projects\BookingFrontend\BookingFrontEnd
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/scott/Projects/BookingFrontend/BookingFrontEnd/Views/Booking/BookingAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29raW5nQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/scott/Projects/BookingFrontend/BookingFrontEnd/Views/Booking/BookingAvailability.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29raW5nQXZhaWxhYmlsaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/scott/Projects/BookingFrontend/BookingFrontEnd/Views/Booking/BookingDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29raW5nRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/scott/Projects/BookingFrontend/BookingFrontEnd/Views/Booking/BookingSearch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29raW5nU2VhcmNoLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/scott/Projects/BookingFrontend/BookingFrontEnd/Views/Booking/_BookingSearch.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xfQm9va2luZ1NlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/scott/Projects/BookingFrontend/BookingFrontEnd/Views/Home/Index.cshtml]

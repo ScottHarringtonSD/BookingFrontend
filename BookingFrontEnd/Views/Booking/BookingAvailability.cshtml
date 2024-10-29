@@ -54,29 +54,29 @@
     <div class="col">
         @{ 
                 for(int i = j; i < monthLength; i = i + 7){
-                    if(Model.Availabilities[i,0] + Model.Availabilities[i,1] == 0){
+                    if(Model.Availabilities[i,0] == null && Model.Availabilities[i,1] == null){
                         <div class="row calendar-margin">
                             <div class="bg-success square border border-dark"  data-bs-toggle="tooltip" data-bs-placement="top" title="Both Guest and Front Room are available!"> @(i+1)</div>
                         </div>
                     }
-                    else if(Model.Availabilities[i,0] + Model.Availabilities[i,1] == 1){
-                        if(Model.Availabilities[i,0] == 1){
+                    else if(Model.Availabilities[i,0] != null && Model.Availabilities[i,1] != null) {
+                        <div class="row calendar-margin">
+                        <div class="bg-danger square border border-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Guest room booked by @Model.Availabilities[i,0] and Front room booked by @Model.Availabilities[i,1]">@(i+1)</div>
+                        </div>
+                    }
+                    else if(Model.Availabilities[i,0] != null || Model.Availabilities[i,1] != null){
+                        if(Model.Availabilities[i,0] != null){
                             <div class="row calendar-margin">
-                            <div class="bg-warning square border border-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Front Room available!">@(i+1)</div>
+                            <div class="bg-warning square border border-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Guest room booked by @Model.Availabilities[i,0]">@(i+1)</div>
                             </div>
                         }
                         else{
                             <div class="row calendar-margin">
-                            <div class="bg-warning square border border-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Guest Room available!">@(i+1)</div>
+                            <div class="bg-warning square border border-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Front room booked by @Model.Availabilities[i,1]">@(i+1)</div>
                             </div>
                         }
                 
-                    }
-                    else {
-                        <div class="row calendar-margin">
-                        <div class="bg-danger square border border-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="No Rooms Avaliable :/">@(i+1)</div>
-                        </div>
-                    }
+                    } 
                 }
         }
 

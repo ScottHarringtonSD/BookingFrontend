@@ -8,12 +8,12 @@ public class BookingAvailabilityModel{
 
     public int Year{ get; set; }
 
-    public int[,] Availabilities { get; set; }
+    public string?[,] Availabilities { get; set; }
 
     public BookingAvailabilityModel(){
         Month = 0;
         Year = 0;
-        Availabilities = new int[31,2];
+        Availabilities = new string?[31,2];
     }
 
     public BookingAvailabilityModel(int month, int year, List<Booking> bookingList){
@@ -25,12 +25,12 @@ public class BookingAvailabilityModel{
     }
 
 
-    private int[,] AvailabilityCalculator(List<Booking> bookings){
-        int[,] returnArray = new int[31,2];
+    private string?[,] AvailabilityCalculator(List<Booking> bookings){
+        string?[,] returnArray = new string?[31,2];
 
             for (int i = 0; i<31; i++){
                 for(int j = 0; j<2; j++){
-                    returnArray[i,j] = 0;
+                    returnArray[i,j] = null;
                 }
             }
 
@@ -42,10 +42,10 @@ public class BookingAvailabilityModel{
                 if(booking.Date.Month == currentMonth &&
                  booking.Date.Year == currentYear){
                     if(booking.Room == "Guest"){
-                        returnArray[booking.Date.Day - 1, 0] = 1;
+                        returnArray[booking.Date.Day - 1, 0] = booking.Name;
                     }
                     else{
-                        returnArray[booking.Date.Day - 1, 1] = 1;
+                        returnArray[booking.Date.Day - 1, 1] = booking.Name;
                     }
                  }
             }

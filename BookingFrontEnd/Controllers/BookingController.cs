@@ -29,16 +29,28 @@ public class BookingController : Controller
     /// <returns>The booking detail page.</returns>
     [HttpGet]  
     public IActionResult BookingDetail(string id){
+        try{
 
         Booking returnBooking = _bookingClient.GetBooking(id);
 
         return View(returnBooking);
+        }
+        catch{
+            TempData["Error"] = "Sorry, something unexpectedly went wrong. Please try again, it (probably) won't happen twice.";
+            return RedirectToAction("Index", "Home"); 
+        }
 
     }
 
     [HttpGet]
     public IActionResult BookingAdd(){
+        try{
         return View(new BookingAddModel());
+        }
+        catch{
+            TempData["Error"] = "Sorry, something unexpectedly went wrong. Please try again, it (probably) won't happen twice.";
+            return RedirectToAction("Index", "Home"); 
+        }
     }
 
     /// <summary>
@@ -58,6 +70,10 @@ public class BookingController : Controller
             TempData["Message"] = "Error: This room is already booked on this day. Please try a different room or a different day!";
             return View(booking);
         }
+        catch{
+            TempData["Error"] = "Sorry, something unexpectedly went wrong. Please try again, it (probably) won't happen twice.";
+            return RedirectToAction("Index", "Home"); 
+        }
     }
 
     /// <summary>
@@ -70,6 +86,7 @@ public class BookingController : Controller
     public IActionResult BookingAvailability(int year, int month){
 
 
+        try{
 
         List<Booking> bookingList = _bookingClient.GetMonthlyBookings(year, month);
 
@@ -77,6 +94,11 @@ public class BookingController : Controller
         
 
         return View(bookingAvailability);
+        }
+        catch{
+            TempData["Error"] = "Sorry, something unexpectedly went wrong. Please try again, it (probably) won't happen twice.";
+            return RedirectToAction("Index", "Home"); 
+        }
     }
 
     /// <summary>
@@ -85,6 +107,7 @@ public class BookingController : Controller
     /// <returns></returns>
     [HttpGet]
     public IActionResult BookingSearch(BookingSearchModel search){
+        try{
 
         if(search.Name == null && search.Date == null){
             return View(new BookingSearchModel());
@@ -96,6 +119,12 @@ public class BookingController : Controller
         BookingSearchModel bookingSearch = new BookingSearchModel(search.Name, search.Date, bookingList);
 
         return View(bookingSearch);
+        }
+        catch{
+            TempData["Error"] = "Sorry, something unexpectedly went wrong. Please try again, it (probably) won't happen twice.";
+            return RedirectToAction("Index", "Home"); 
+        }
+            
 
         
     }
@@ -108,14 +137,19 @@ public class BookingController : Controller
     /// <returns>The search page.</returns>
     [HttpPost]
     public IActionResult BookingDelete(string id){
-        bool result = _bookingClient.DeleteBooking(id);
+        try{
+            var token = HttpContext.Request.Cookies["token"];
+            bool result = _bookingClient.DeleteBooking(id, token);
 
-        if (result){
             TempData["Message"] = "Booking Deletion Successful!";
             return RedirectToAction("BookingSearch", new { search = new BookingSearchModel()});
         }
-        else{
-            TempData["Message"] = "This deletion failed. Not sure why. Sorry";
+        catch(UnauthorisedException ex){
+            TempData["Error"] = "You are not authorised to delete bookings. You need to login, or maybe refresh your login.";
+            return RedirectToAction("BookingDetail", new { id = id}); 
+        }
+        catch{
+            TempData["Error"] = "This deletion failed. Not sure why. Sorry";
             return RedirectToAction("BookingDetail", new { id = id}); 
         }
     }

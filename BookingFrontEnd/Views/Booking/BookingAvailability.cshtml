@@ -23,6 +23,18 @@
     }
 }
 
+<div class="text-center">
+@if(TempData["Error"] != null){
+
+<div class="row pt-3">
+    <div class="alert alert-danger pt-3" role="alert">
+    @TempData["Error"]
+    </div>
+</div>
+}
+</div>
+
+
 
 <div class="text-center">
     <h2>Available Dates for: </h2>

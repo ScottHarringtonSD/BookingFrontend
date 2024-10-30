@@ -10,8 +10,8 @@ public class Client : IClient, IDisposable
 
         {
 
-            //RestClient = new RestClient("http://localhost:3000/");
-            RestClient = new RestClient("https://bookingapi-1ymq.onrender.com/");
+            RestClient = new RestClient("http://localhost:3000/");
+            //RestClient = new RestClient("https://bookingapi-1ymq.onrender.com/");
 
         }
 
@@ -30,6 +30,9 @@ public class Client : IClient, IDisposable
             }
             else if (restResponse.StatusCode == System.Net.HttpStatusCode.Conflict){
                 throw new ConflictingException("This data conflicts with that in the database");
+            }
+            else if (restResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized){
+                throw new UnauthorisedException("You are not authorised to complete this action.");
             }
 
             // else if (restResponse.StatusCode == System.Net.HttpStatusCode.NotFound)

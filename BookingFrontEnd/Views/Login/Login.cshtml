@@ -1,0 +1,41 @@
+@model Credentials
+
+
+<div class="text-center pb-4">
+    <h1>Login</h1>
+</div>
+
+<form class="form-group" method="get">
+
+    <div class="align-items-center">
+        <div class="row pb-4">
+            <div class="col-sm-4"></div>
+            <div class="col">
+
+            <input asp-for="Username" class="form-control" type="text" placeholder="Username"/>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <div class="row pb-4">
+            <div class="col-sm-4"></div>
+            <div class="col">
+
+            <input asp-for="Password" class="form-control" type="password" placeholder="Password"/>
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col">
+                <div class="d-grid gap-2 col-6 mx-auto">
+
+            <button class="btn btn-primary btn-block" type="submit" asp-controller="Login" asp-action="GetCredentials">Login</button>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+            
+        </div>
+    </div>
+
+</form>

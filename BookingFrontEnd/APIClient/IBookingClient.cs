@@ -12,7 +12,7 @@ public interface IBookingClient{
 
     public List<Booking> SearchBookings(string? name, DateTime? date);
 
-    public bool DeleteBooking(string id);
+    public bool DeleteBooking(string id, string token);
 
     public void Dispose();
 }

@@ -131,13 +131,13 @@ public class BookingClient : IBookingClient, IDisposable
         /// </summary>
         /// <param name="id"></param>
         /// <returns>A boolean to confirm if the booking has been deleted.</returns>
-        public bool DeleteBooking(string id){
+        public bool DeleteBooking(string id, string token){
 
-            try{
+    
 
                 var request = new RestRequest(
 
-                "Bookings/" + id, Method.Delete);
+                "Bookings/" + id, Method.Delete).AddHeader("Auth", token);
 
 
                 var response = _client!.ExecuteRequest<JsonObject>(request);
@@ -145,10 +145,6 @@ public class BookingClient : IBookingClient, IDisposable
 
                 return true;
 
-            }
-            catch{
-                return false;
-            }
 
 
         }

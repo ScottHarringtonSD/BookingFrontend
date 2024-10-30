@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IRestClient, RestClient>();
 builder.Services.AddSingleton<IClient, Client>();
 builder.Services.AddSingleton<IBookingClient, BookingClient>();
+builder.Services.AddSingleton<ILoginClient, LoginClient>();
 
 var app = builder.Build();
 

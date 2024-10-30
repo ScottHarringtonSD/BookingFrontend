@@ -5,6 +5,17 @@
 }
 
 <div class="text-center">
+@if(TempData["Error"] != null){
+
+<div class="row pt-3">
+    <div class="alert alert-danger pt-3" role="alert">
+    @TempData["Error"]
+    </div>
+</div>
+}
+</div>
+
+<div class="text-center">
     <h1 class="display-4">Welcome To The South Parade Booking Portal!</h1>
     <p>We thank you very kindly for using the portal. Don't forget to leave a review!</p>
     <p>Please note that this entire site runs off of free services, because I am to cheap to pay for 

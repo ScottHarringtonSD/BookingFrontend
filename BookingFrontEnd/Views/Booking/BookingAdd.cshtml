@@ -1,5 +1,17 @@
 @model BookingAddModel
 
+<div class="text-center">
+@if(TempData["Error"] != null){
+
+<div class="row pt-3">
+    <div class="alert alert-danger pt-3" role="alert">
+    @TempData["Error"]
+    </div>
+</div>
+}
+</div>
+
+
 
 <h1>Add Booking</h1>
 <form method="post">

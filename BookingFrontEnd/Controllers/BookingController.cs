@@ -139,6 +139,11 @@ public class BookingController : Controller
     public IActionResult BookingDelete(string id){
         try{
             var token = HttpContext.Request.Cookies["token"];
+
+            if(token == null){
+                throw new UnauthorisedException("You are not authorised to complete this action.");
+            }
+
             bool result = _bookingClient.DeleteBooking(id, token);
 
             TempData["Message"] = "Booking Deletion Successful!";
